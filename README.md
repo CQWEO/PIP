@@ -156,10 +156,9 @@ local window_misc = library.window("misc")
 
 window_player.toggle("client glow",false,function(val)
     flags.light = val
-   
     if val then
-        local l = Instance.new("PointLight")
-        l.Range = 100000000000000
+        local l = Instance.new("Lighting")
+        l.Range = 100000000000000000000000000000000000000000000
         l.Brightness = 3
         l.Parent = char.PrimaryPart
        
@@ -180,7 +179,7 @@ window_player.toggle("instant use",false,function(val)
     holdconnect:Disconnect()
 end)
 
-local walkspeedslider = window_player.toggle("walkspeed",21,function(val)
+local walkspeedslider = window_player.toggle("walkspeed",35,function(val)
     hum.WalkSpeed = val
     flags.speed = val
 end)
@@ -398,7 +397,7 @@ end)
 
 local entitynames = {"RushMoving","AmbushMoving","Snare","A60","A120"}
 
-window_player.label("credits: NueMur",20)
+window_player.label("Doors",20)
 window_esp.toggle("entity esp",false,function(val)
     flags.esprush = val
     
@@ -674,7 +673,7 @@ window_esp.toggle("goldpile esp",false,function(val)
     end
 end)
 
-window_esp.Toggle("minimum gold value",false,function(val)
+window_esp.toggle("minimum gold value",false,function(val)
     flags.goldespvalue = val
 end)
 
